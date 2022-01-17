@@ -1,0 +1,5 @@
+extends ../layout
+
+block content
+    include ../mixins/reviewForm
+    +reviewForm(review, `/products/${product.id}/review/add`, `/products/profile/${product.id}`)

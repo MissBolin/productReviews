@@ -1,0 +1,9 @@
+mixin reviewPanel(review)
+
+    div.review-panel
+        div=review.customer_name
+        div Rating: #{review.rating}
+        div=review.subject
+        p=review.description
+        div
+            a(href=`/reviews/edit/${review.id}`) Edit Review

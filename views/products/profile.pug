@@ -1,6 +1,7 @@
 extends ../layout
 
 block content
+    include ../mixins/reviewPanel
     h1= product.product_name
     div Rating:5
     div
@@ -8,3 +9,8 @@ block content
         a(href=`/products/delete/${product.id}`) Delete
     p= product.description
     a(href='/products') Back to Products
+    h3=`${product.reviews.length} Reviews`
+    a(href=`/products/${product.id}/review/add`) Add Review
+    div.reviews
+        each review in product.reviews
+            +reviewPanel(review)
