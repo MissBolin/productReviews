@@ -13,7 +13,7 @@ block content
         each product in products
           tr
             td= product.product_name
-            td 5
+            td= product.rating
             td= product.category
             td
               a(href=`/products/profile/${product.id}`) View Product

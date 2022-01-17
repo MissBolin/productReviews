@@ -3,7 +3,7 @@ extends ../layout
 block content
     include ../mixins/reviewPanel
     h1= product.product_name
-    div Rating:5
+    div= product.rating
     div
         a(href=`/products/edit/${product.id}`) Edit
         a(href=`/products/delete/${product.id}`) Delete
