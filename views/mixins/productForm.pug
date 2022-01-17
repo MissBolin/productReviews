@@ -1,0 +1,22 @@
+mixin productForm(product, categories, saveUrl, cancelUrl)
+
+    div.form-container
+        form(action=saveUrl method='post')
+            div.form-input
+                label(for="product_name") Product Name
+                input(type="text" id="product_name" name="product_name" value=product.product_name)
+
+            div.form-input
+                label(for="category") Category
+                select(id="category" name="category")
+                    each category in categories
+                        option(value=category selected= category===product.category) #{category}
+
+            div.form-input
+                label(for="description") Description
+                textarea(id="description" name="description" rows=10 cols=80) #{product.description}
+
+            div.form-buttons
+                a.button(href=cancelUrl) Cancel
+                button.button(type='submit') Save
+

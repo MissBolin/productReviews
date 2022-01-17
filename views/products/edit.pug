@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+    include ../mixins/productForm
+    +productForm(product, categories, `/products/edit/${product.id}`, `/products/profile/${product.id}`)
+
